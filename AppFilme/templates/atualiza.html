@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Atualização de Informações dos Filmes{% endblock %}
+
+{% block conteudo %}
+	<h3>Atualização do Filme: {{ filme.nome }}</h3>          
+    
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Nome</label>
+        {{ form.nome }}
+        
+        <br>
+           
+        <label>Gênero</label>
+        {{ form.genero }}
+        
+        <br>
+            
+		<label>Classificação indicativa</label>
+        {{ form.classind }}
+        
+        <br>
+           
+		<label>Sinapse</label>
+        {{ form.sinapse }}
+        
+        <br>
+        
+        <label>Ano</label>
+        {{ form.ano }}
+        
+        <br>
+        
+        <label>Qualidade</label>
+        {{ form.qualidade }}
+        
+        <br>
+        
+        <label>Duração (minutos)</label>
+        {{ form.tempo}}
+        
+        <br>
+        
+        <label>Preço</label>
+        {{ form.valor }}
+        
+        <br>
+        <br>
+        
+        <button>ATUALIZAR</button>
+	</form>		  
+{% endblock %}

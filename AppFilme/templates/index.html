@@ -1,0 +1,15 @@
+<!-- Estende do template base -->
+{% extends "base.html" %}
+
+<!-- Bloco que define o title da pagina -->
+{% block title %}Sistema de Gerenciamento de Filmes{% endblock %}
+
+<!-- Bloco de contencao da pagina -->    
+{% block conteudo %}
+	<h3>Cadastrar Filme</h3>
+    <p>Cadastre <a href="{% url 'cadastra_filme' %}">aqui</a> um novo filme!</p>
+           
+    <h3>Listar Filmes</h3>
+    <p>Veja <a href="{% url 'lista_filmes' %}">aqui</a> a lista de filmes cadastrados!</p>
+            
+{% endblock %}

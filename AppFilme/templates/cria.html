@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+	<h3>Cadastro de Filmes</h3>
+	
+	<form method="post">
+		{% csrf_token %}
+		
+		<label>Nome:</label>
+		{{ form.nome }}
+		
+		<br>
+		
+		<label>Gênero:</label>
+		{{ form.genero }}
+		
+		<br>
+		
+		<label>Classificação indicativa:</label>
+		{{ form.classind }}
+		
+		<br>
+		
+		<label>Sinapse:</label>
+		{{ form.sinapse }}
+		
+		<br>
+		
+		<label>Ano:</label>
+		{{ form.ano }}
+		
+		<br>
+		
+		<label>Duração (minutos):</label>
+		{{ form.tempo }}
+		
+		<br>
+		
+		<label>Qualidade:</label>
+		{{ form.qualidade }}
+		
+		<br>
+		
+		<label>Preço:</label>
+		{{ form.valor }}
+		
+		<br>
+		<br>
+		
+		<button>CADASTRAR</button>
+		
+	</form>
+
+{% endblock %}

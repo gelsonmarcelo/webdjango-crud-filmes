@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Filmes{% endblock %}	
+		
+{% block conteudo %}
+	<h3>Lista de Filmes</h3>
+		<table border=1>
+			<tr>
+				<th>Nome</th>
+				<th>Gênero</th>
+				<th>Classificação Indicativa</th>
+				<th>Sinapse</th>
+				<th>Ano</th>
+				<th>Duração</th>
+				<th>Qualidade</th>
+				<th>Preço</th>
+				<th>Ações</th>
+			</tr>
+			
+			{% for filme in filmes %}
+			<tr>
+        		<td>{{ filme.nome }}</td>
+        		<td>{{ filme.genero }}</td>
+        		<td>{{ filme.classind }}</td>
+       			<td>{{ filme.sinapse }}</td>
+   				<td>{{ filme.ano }}</td>
+   				<td>{{ filme.tempo }}</td>
+   				<td>{{ filme.qualidade }}</td>
+   				<td>{{ filme.valor }}</td>
+   				<td>
+   					<a href="{% url 'atualiza_filme' pk=filme.id %}">Atualizar</a>
+   					<a href="{% url 'deleta_filme' pk=filme.id %}">Excluir</a>
+   				</td>   
+      		</tr>
+    		{% endfor %}  			
+		</table>
+{% endblock %}
+
+
